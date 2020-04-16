@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { contact } from 'src/app/models/contact';
+import { Contact } from 'src/app/models/contact';
 
 @Component({
   selector: 'contact-list',
@@ -9,7 +9,7 @@ import { contact } from 'src/app/models/contact';
 export class ContactListComponent implements OnInit {
 
   constructor() { }
-  @Input() contacts: contact[];
+  @Input() contacts: Contact[];
   ngOnInit(): void {
   }
 

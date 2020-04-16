@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { contact } from '../../models/contact';
+import { Contact } from '../../models/contact';
 
 @Component({
   selector: 'contact-preview',
@@ -10,7 +10,7 @@ export class ContactPreviewComponent implements OnInit {
 
   constructor() {
   }
-  @Input() contact: contact;
+  @Input() contact: Contact;
   ngOnInit(): void {
   }
 

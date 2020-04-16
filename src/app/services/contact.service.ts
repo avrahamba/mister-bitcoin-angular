@@ -1,11 +1,17 @@
 import { Injectable } from '@angular/core';
-import { contact } from '../models/contact';
+import { Contact } from '../models/contact';
 import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ContactService {
+
+  private _contacts: Contact[];
+
+  private _contacts$ = new BehaviorSubject<Contact[]>(this._contacts);
+
+  public contacts$ = this._contacts$.asObservable()
 
   constructor() {
     if (localStorage.contacts) this._contacts = JSON.parse(localStorage.contacts)
@@ -23,11 +29,6 @@ export class ContactService {
     localStorage.contacts = JSON.stringify(this._contacts);
   }
 
-  private _contacts: contact[];
-
-  private _contacts$ = new BehaviorSubject<contact[]>(this._contacts);
-  public contacts$ = this._contacts$.asObservable()
-
   public loadPets(filterBy = { term: '' }) {
     const pets = this._contacts.filter(({ name }) => {
       return name.toLowerCase().includes(filterBy.term.toLowerCase());
@@ -40,7 +41,7 @@ export class ContactService {
   }
 
 
-  public saveContact(contact: contact) {
+  public saveContact(contact: Contact) {
     if (contact._id) {
       const idx = this._contacts.findIndex(currContact => currContact._id === contact._id)
       this._contacts[idx] = contact;

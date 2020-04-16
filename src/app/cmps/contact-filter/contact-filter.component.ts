@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { filterBy } from 'src/app/models/filterBy';
+import { FilterBy } from 'src/app/models/filterBy';
 
 @Component({
   selector: 'contact-filter',
@@ -7,14 +7,18 @@ import { filterBy } from 'src/app/models/filterBy';
   styleUrls: ['./contact-filter.component.scss']
 })
 export class ContactFilterComponent implements OnInit {
-  @Input() filterBy: filterBy
-  filterByCopy: filterBy
-  @Output() onFilter = new EventEmitter<filterBy>();
+  filterByCopy: FilterBy
+  
+  @Input() filterBy: FilterBy
+  
+  @Output() onFilter = new EventEmitter<FilterBy>();
 
   constructor() { }
+  
   ngOnInit(): void {
     this.filterByCopy = { ...this.filterBy }
   }
+  
   onInput() {
     this.onFilter.emit(this.filterByCopy)
   }

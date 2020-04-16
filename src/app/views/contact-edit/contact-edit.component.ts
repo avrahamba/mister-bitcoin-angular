@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { contact } from 'src/app/models/contact';
+import { Contact } from 'src/app/models/contact';
 import { ContactService } from 'src/app/services/contact.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms';
@@ -10,7 +10,10 @@ import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms'
   styleUrls: ['./contact-edit.component.scss']
 })
 export class ContactEditComponent implements OnInit {
-
+  
+  id: string;
+  contactForm: FormGroup;
+  
   constructor(private route: ActivatedRoute, private router: Router, private contactService: ContactService, formBuilder: FormBuilder) {
     if (this.route.snapshot.params['id?']) {
       contactService.getContactById(this.route.snapshot.params['id?'])
@@ -34,8 +37,6 @@ export class ContactEditComponent implements OnInit {
 
   ngOnInit(): void { }
 
-  id: string;
-  contactForm: FormGroup;
   saveContact() {
     if (this.contactForm.status !== 'VALID') return
     const sendObj = { ...this.contactForm.value }

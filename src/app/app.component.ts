@@ -9,15 +9,10 @@ import { Router, Event, NavigationStart } from '@angular/router';
 })
 export class AppComponent {
   constructor(private userService: UserService, private router: Router) {
-    // if (!userService.getUser) {
-    //   router.navigate(['/signup']);
-    //   this.signup = true;
-    //   router.events.subscribe((ev: Event) => {
-    //     if (ev instanceof NavigationStart) {
-    //       this.signup = false;
-    //     }
-    //   })
-    // }
   }
-  signup: boolean = false;
+
+  get signup(): boolean {
+    const r = this.router.routerState.snapshot.url
+    return this.router.routerState.snapshot.url === "/signup"
+  }
 }

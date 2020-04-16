@@ -10,9 +10,12 @@ import { Router } from '@angular/router';
 export class SignupComponent implements OnInit {
 
   constructor(private userService: UserService, private router: Router) { }
-  @Output() singuped = new EventEmitter<any>();
+  
   ngOnInit(): void {
   }
+
+  @Output() singuped = new EventEmitter<any>();
+
   onSubmit(form) {
     if (form.name) {
       this.userService.signup(form.name)

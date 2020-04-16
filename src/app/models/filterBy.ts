@@ -1,3 +1,3 @@
-export interface filterBy  {
+export interface FilterBy  {
     term: string
 }

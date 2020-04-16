@@ -1,6 +1,6 @@
-import {move} from './move';
-export interface user {
+import {Move} from './move';
+export interface User {
     name: string,
     coins: number,
-    moves: move[]
+    moves: Move[]
 }
