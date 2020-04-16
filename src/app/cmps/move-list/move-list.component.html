@@ -1,0 +1,12 @@
+<div class="move-list" *ngIf="moves.length">
+    <h3 *ngIf="name;else contactTilte">Your Move:</h3>
+    <ng-template #contactTilte>
+        <h3>Your last 3 Moves:</h3>
+    </ng-template>
+    <div class="move-preview" *ngFor="let move of moves">
+        <p *ngIf="!name">To: {{move.to}}</p>
+        <p>At: {{move.at|date :'dd/MM/yyyy, hh:mm'}}</p>
+        <p>Amount: {{move.amount}}</p>
+    </div>
+</div>
+

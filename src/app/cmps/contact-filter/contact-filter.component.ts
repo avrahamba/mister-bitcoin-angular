@@ -9,13 +9,13 @@ import { filterBy } from 'src/app/models/filterBy';
 export class ContactFilterComponent implements OnInit {
   @Input() filterBy: filterBy
   filterByCopy: filterBy
-  @Output()onFilter = new EventEmitter<filterBy>();
+  @Output() onFilter = new EventEmitter<filterBy>();
 
-  constructor() {   }
+  constructor() { }
   ngOnInit(): void {
-    this.filterByCopy = {...this.filterBy}
+    this.filterByCopy = { ...this.filterBy }
   }
-  onInput(){
+  onInput() {
     this.onFilter.emit(this.filterByCopy)
   }
 }

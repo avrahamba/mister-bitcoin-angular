@@ -6,6 +6,8 @@ import {HomePageComponent} from './views/home-page/home-page.component';
 import {StatisticPageComponent} from './views/statistic-page/statistic-page.component';
 import {ContactPageComponent} from './views/contact-page/contact-page.component';
 import {ContactEditComponent} from './views/contact-edit/contact-edit.component';
+import {SignupComponent} from './views/signup/signup.component';
+
 const routes: Routes = [
   {path: '', component: HomePageComponent },
   {path: 'contact', component: ContactPageComponent },
@@ -13,6 +15,7 @@ const routes: Routes = [
   {path: 'contact/edit/:id?', component: ContactEditComponent },
   {path: 'contact/:id', component: ContactDetailsPageComponent },
   {path: 'statistic', component: StatisticPageComponent },
+  {path: 'signup', component: SignupComponent },
 ];
 
 @NgModule({

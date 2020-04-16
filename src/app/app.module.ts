@@ -15,6 +15,9 @@ import { ContactFilterComponent } from './cmps/contact-filter/contact-filter.com
 import { GoogleChartsModule } from 'angular-google-charts';
 import { NavBarComponent } from './cmps/nav-bar/nav-bar.component';
 import { ContactEditComponent } from './views/contact-edit/contact-edit.component';
+import { SignupComponent } from './views/signup/signup.component';
+import { MoveListComponent } from './cmps/move-list/move-list.component';
+import { TransferFundComponent } from './cmps/transfer-fund/transfer-fund.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,6 +31,9 @@ import { ContactEditComponent } from './views/contact-edit/contact-edit.componen
     ContactFilterComponent,
     NavBarComponent,
     ContactEditComponent,
+    SignupComponent,
+    MoveListComponent,
+    TransferFundComponent,
   ],
   imports: [
     BrowserModule,
