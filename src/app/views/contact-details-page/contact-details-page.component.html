@@ -1,12 +1,17 @@
 <nav>
-<a [routerLink]="['/contact']" routerLinkActive="router-link-active" >back</a>
-<a [routerLink]="['/contact', 'edit',contact._id]" routerLinkActive="router-link-active" >edit</a>
+<a routerLink="/contact">
+    <img src="assets/imgs/back.svg" alt="back" title="Back">
+</a>
+<a [routerLink]="['/contact', 'edit',contact._id]">
+    <img src="assets/imgs/edit-contact.svg" alt="Edit contact" title="Edit contact">
+</a>
 </nav>
-
-<img [src]="'https://robohash.org/'+contact._id" [alt]="contact.name">
-
-<p>Name: {{contact.name}}</p>
-<p>Phone: {{contact.phone}}</p>
-<p>Email: {{contact.email}}</p>
-<transfer-fund [contact]="contact"></transfer-fund>
-<move-list [name]="contact.name" [moves]="moves"></move-list>
+<main>
+    <img [src]="'https://robohash.org/'+contact._id" [alt]="contact.name">
+    
+    <p>Name: {{contact.name}}</p>
+    <p>Phone: {{contact.phone}}</p>
+    <p>Email: {{contact.email}}</p>
+    <transfer-fund [contact]="contact"></transfer-fund>
+    <move-list [name]="contact.name" [moves]="moves"></move-list>
+</main>

@@ -1,0 +1,26 @@
+$clr1: #393939;
+$clr2: #9fa6ad;
+$clr3: #2d2d2d;
+$clr4: #3e4a52;
+
+.transfer-fund {
+    margin: 0 -30px;
+    padding: 15px 30px;
+    background-color: $clr3;
+    label {
+        display: flex;
+        input {
+            margin: 0 20px;
+            width: 80px;
+            border-radius: 5px;
+            border: none;
+            padding: 10px;
+        }
+        button {
+            background-color: $clr4;
+            color: $clr2;
+            border: none;
+            border-radius: 5px;
+        }
+    }
+}

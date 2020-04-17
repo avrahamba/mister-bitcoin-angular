@@ -1,3 +1,5 @@
 <contact-filter [filterBy]="{term:''}" (onFilter)="onFilter($event)"></contact-filter>
 <contact-list [contacts]="contacts"></contact-list>
-<a [routerLink]="['/contact/edit']" routerLinkActive="router-link-active" >add</a>
+<a routerLink="/contact/edit" routerLinkActive="router-link-active">
+    <img src="assets/imgs/add-contact.svg" alt="add" title="Add contact">
+</a>

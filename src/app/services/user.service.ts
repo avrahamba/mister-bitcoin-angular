@@ -2,7 +2,8 @@ import { Injectable } from '@angular/core';
 import { User } from '../models/user';
 import { Contact } from '../models/contact';
 import { Move } from '../models/move';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, race } from 'rxjs';
+import { BitcoinService } from './bitcoin.service';
 
 @Injectable({
   providedIn: 'root'
@@ -15,7 +16,7 @@ export class UserService {
   public move$ = this._moves$.asObservable()
   private _currContactId: string;
 
-  constructor() {
+  constructor(private bitcoinService:BitcoinService) {
     if (localStorage.user) {
       this._user = JSON.parse(localStorage.user);
     }
@@ -47,9 +48,18 @@ export class UserService {
     localStorage.user = JSON.stringify(this._user);
     console.log('this._currContactId :', this._currContactId);
     if (this._currContactId) {
-      this._moves$.next(this._user.moves.filter(move => move.toId === this._currContactId));
-    }
-  }
+      this.bitcoinService.getRate(1)
+      .then(rate=>{
+        this._moves$.next(this._user.moves
+          .filter(move => move.toId === this._currContactId)
+          .map(move=>{
+            move.bitcoin = Math.round(((move.amount * rate) + Number.EPSILON) * 10000) / 10000;
+            return move
+          })
+          );
+        })
+        }
+      }
 
   get lastThree(): Move[] {
     return this._user.moves.slice(0, 3);

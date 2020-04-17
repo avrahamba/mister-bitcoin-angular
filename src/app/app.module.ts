@@ -7,7 +7,6 @@ import { AppComponent } from './app.component';
 import { HomePageComponent } from './views/home-page/home-page.component';
 import { ContactPageComponent } from './views/contact-page/contact-page.component';
 import { ContactDetailsPageComponent } from './views/contact-details-page/contact-details-page.component';
-import { StatisticPageComponent } from './views/statistic-page/statistic-page.component';
 import { ContactPreviewComponent } from './cmps/contact-preview/contact-preview.component';
 import { ContactListComponent } from './cmps/contact-list/contact-list.component';
 import { ChartComponent } from './cmps/chart/chart.component';
@@ -24,7 +23,6 @@ import { TransferFundComponent } from './cmps/transfer-fund/transfer-fund.compon
     HomePageComponent,
     ContactPageComponent,
     ContactDetailsPageComponent,
-    StatisticPageComponent,
     ContactPreviewComponent,
     ContactListComponent,
     ChartComponent,

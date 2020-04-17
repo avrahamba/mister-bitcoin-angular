@@ -12,7 +12,7 @@ export class AppComponent {
   }
 
   get signup(): boolean {
-    const r = this.router.routerState.snapshot.url
-    return this.router.routerState.snapshot.url === "/signup"
+    const url = this.router.routerState.snapshot.url
+    return url === "/signup"
   }
 }

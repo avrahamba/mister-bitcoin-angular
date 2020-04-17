@@ -5,8 +5,10 @@
     </ng-template>
     <div class="move-preview" *ngFor="let move of moves">
         <p *ngIf="!name">To: {{move.to}}</p>
+        <p>Amount: 
+            <span class="dolar">${{move.amount}} </span>|
+            <span class="bitcoin">  BTC: {{move.bitcoin}}</span>
+         </p>
         <p>At: {{move.at|date :'dd/MM/yyyy, hh:mm'}}</p>
-        <p>Amount: {{move.amount}}</p>
     </div>
 </div>
-

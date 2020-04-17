@@ -1,0 +1,29 @@
+
+$clr1: #393939;
+$clr2: #9fa6ad;
+$clr3: #2d2d2d;
+$clr4: #3e4a52;
+
+
+.signup {
+    padding: 50px;
+    text-align: center;
+    
+    form {
+        padding-top: 50px;
+
+        display: flex;
+        flex-direction: column;
+        *{
+            margin-bottom: 10px;
+            height: 35px;
+
+        }
+        button{
+          background-color: $clr4;  
+          color: $clr2;
+          border: none;
+          border-radius: 5px;
+        }
+    }
+}

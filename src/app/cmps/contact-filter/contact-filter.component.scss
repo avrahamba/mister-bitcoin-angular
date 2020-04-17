@@ -1,0 +1,19 @@
+$clr1: #393939;
+$clr2: #9fa6ad;
+$clr3: #2d2d2d;
+$clr4: #3e4a52;
+
+
+.contact-filter{
+    input{
+        width: 100%;
+        height: 60px;
+        border: none;
+        border-radius: 0;
+        background-color: $clr4;
+        color: #eee;
+        padding-left: 30px;
+        padding-right: 30px;
+        font-size: 1.5rem;
+    }
+}

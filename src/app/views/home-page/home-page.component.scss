@@ -1,0 +1,33 @@
+$clr1: #393939;
+$clr2: #9fa6ad;
+$clr3: #2d2d2d;
+$clr4: #3e4a52;
+
+.home-page {
+    padding: 20px;
+    p {
+        font-size: 1.5rem;
+        display: flex;
+        img {
+            width: 30px;
+        }
+        span {
+            color: #ff9900;
+        }
+    }
+    .dolar {
+        margin-left: 6px;
+        color: #109618;
+    }
+    .set-cart {
+        margin-top: 20px;
+        display: flex;
+        justify-content: space-around;
+        button {
+            color: $clr2;
+            background: none;
+            border: none;
+            font-size: 1rem;
+        }
+    }
+}

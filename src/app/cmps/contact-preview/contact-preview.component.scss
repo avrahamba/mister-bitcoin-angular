@@ -1,13 +1,26 @@
-.contact-preview{
+$clr1: #393939;
+$clr2: #9fa6ad;
+$clr3: #2d2d2d;
+$clr4: #3e4a52;
+
+.contact-preview {
     display: flex;
-    margin-bottom: 20px;
-    img{
+    margin-bottom: 10px;
+    padding: 1px 30px;
+    height: 50px;
+    &:hover {
+        cursor: pointer;
+        background-color: $clr4;
+    }
+    img {
         width: 50px;
         margin-right: 20px;
+        border-radius: 1000px;
     }
-    p{
+    p {
         display: flex;
         flex-direction: column;
         justify-content: center;
+        font-size: 1.5rem;
     }
 }

@@ -1,6 +1,25 @@
-<h2>Hello {{name}}</h2>
+<div class="home-page">
 
-<p>${{coins}}</p>
-<p>BTC: {{bitcoinRate}}</p>
+    <h2>Welcome back, {{name}}</h2>
 
-<move-list [moves]="moves"></move-list>
+    <p class="dolar">$ {{coins}}</p>
+    <p>
+        <img src="assets/imgs/bitcoin.svg" alt="">
+        <span>
+            {{bitcoinRate}}
+        </span>
+    </p>
+    <!-- <button >Enter Dolars</button> -->
+    <h3>
+        {{bitcoinRateTitle}}
+    </h3>
+    <div class="set-cart">
+        <button (click)="setGraf(1)">1M</button>
+        <button (click)="setGraf(2)">2M</button>
+        <button (click)="setGraf(6)">6M</button>
+        <button (click)="setGraf(12)">12M</button>
+        <button (click)="setGraf(24)">24M</button>
+    </div>
+    <chart [chart]="chart"></chart>
+    <move-list [moves]="moves"></move-list>
+</div>

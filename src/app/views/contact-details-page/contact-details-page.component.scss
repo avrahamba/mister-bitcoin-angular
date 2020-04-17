@@ -1,0 +1,16 @@
+nav {
+    padding: 10px 30px;
+    display: flex;
+    justify-content: space-between;
+    img {
+        width: 50px;
+    }
+}
+main{
+    font-size: 1.6rem;
+    img{
+        max-width: 200px;
+        border-radius: 1000px;
+    }
+    padding: 0 30px;
+}
