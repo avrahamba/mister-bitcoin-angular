@@ -1,18 +1,9 @@
-
-
-<form  [formGroup]="contactForm" (ngSubmit)="saveContact()" #addressForm="ngForm">
-    <label>
-        Name:  <input type="text" formControlName="name" required invalidName/>
-    </label>
-    <br>
-    <label>
-        Email: <input type="email" formControlName="email" required validateEmail /> 
-    </label>
-    <br>
-    <label>
-        Phone: <input type="text" formControlName="phone" required />
-    </label>
-    <br>
-    <input type="submit" />
+<form [formGroup]="contactForm" (ngSubmit)="saveContact()" #addressForm="ngForm">
+    <img [src]="imgUrl">
+    <input type="text" placeholder="Name" formControlName="name" required invalidName />
+    <input type="email" placeholder="Email" formControlName="email" required validateEmail />
+    <input type="tel" placeholder="Phone" formControlName="phone" required />
+    <button type="submit" >
+        Save Contact
+    </button>
 </form>
-<hr />

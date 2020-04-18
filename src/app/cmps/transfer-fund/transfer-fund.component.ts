@@ -16,7 +16,7 @@ export class TransferFundComponent implements OnInit {
   ngOnInit(): void {
   }
   
-  transfer() {
+  onTransfer() {
     if (this.amount > 0) this.userService.transforCoins(this.amount, this.contact)
     this.amount = 0;
   }

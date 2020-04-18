@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { User } from '../models/user';
 import { Contact } from '../models/contact';
 import { Move } from '../models/move';
-import { BehaviorSubject, race } from 'rxjs';
+import { BehaviorSubject } from 'rxjs';
 import { BitcoinService } from './bitcoin.service';
 
 @Injectable({

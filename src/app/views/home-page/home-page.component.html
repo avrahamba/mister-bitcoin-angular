@@ -14,11 +14,11 @@
         {{bitcoinRateTitle}}
     </h3>
     <div class="set-cart">
-        <button (click)="setGraf(1)">1M</button>
-        <button (click)="setGraf(2)">2M</button>
-        <button (click)="setGraf(6)">6M</button>
-        <button (click)="setGraf(12)">12M</button>
-        <button (click)="setGraf(24)">24M</button>
+        <button (click)="onSetGraf(1)">1M</button>
+        <button (click)="onSetGraf(2)">2M</button>
+        <button (click)="onSetGraf(6)">6M</button>
+        <button (click)="onSetGraf(12)">12M</button>
+        <button (click)="onSetGraf(24)">24M</button>
     </div>
     <chart [chart]="chart"></chart>
     <move-list [moves]="moves"></move-list>

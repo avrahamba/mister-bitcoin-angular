@@ -8,8 +8,7 @@ import { Contact } from '../../models/contact';
 })
 export class ContactPreviewComponent implements OnInit {
 
-  constructor() {
-  }
+  constructor() { }
   @Input() contact: Contact;
   ngOnInit(): void {
   }

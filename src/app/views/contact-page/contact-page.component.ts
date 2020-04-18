@@ -12,14 +12,13 @@ export class ContactPageComponent implements OnInit, OnDestroy {
   subscription: Subscription
   contacts: Contact[];
   
-  constructor(private contactService: ContactService) {
+  constructor(private contactService: ContactService) { }
+  
+  ngOnInit(): void {
     this.contactService.loadPets()
     this.subscription = this.contactService.contacts$.subscribe((contacts) => {
       this.contacts = [...contacts]
     })
-  }
-  
-  ngOnInit(): void {
   }
 
   ngOnDestroy(): void {

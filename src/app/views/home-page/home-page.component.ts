@@ -13,11 +13,13 @@ export class HomePageComponent implements OnInit {
   moves = this.userService.lastThree;
   bitcoinRateTitle: string;
 
-  constructor(private bitcoinService: BitcoinService, private userService: UserService) {
-    this.coins = userService.getUser.coins;
-    bitcoinService.getRate(this.coins).then(rate => this.bitcoinRate = Math.round((rate + Number.EPSILON) * 10000) / 10000);
-
-    bitcoinService.getMarketPrice(6)
+  constructor(private bitcoinService: BitcoinService, private userService: UserService) { };
+  
+  ngOnInit(): void {
+    this.coins = this.userService.getUser.coins;
+    this.bitcoinService.getRate(this.coins).then(rate => this.bitcoinRate = Math.round((rate + Number.EPSILON) * 10000) / 10000);
+  
+    this.bitcoinService.getMarketPrice(6)
       .then(data => {
         data = data.map((price: { x: any; y: any; }) => {
           const date = new Date(Number(price.x) * 1000)
@@ -27,13 +29,9 @@ export class HomePageComponent implements OnInit {
         this.bitcoinRateTitle = 'Bitcoin Rate: ' + data[data.length - 1][1]
         this.chart.data = data
       })
-
-  };
-
-  ngOnInit(): void {
   }
 
-  setGraf(month:number){
+  onSetGraf(month:number){
     this.bitcoinService.getMarketPrice(month)
     .then(data => {
       data = data.map((price: { x: any; y: any; }) => {

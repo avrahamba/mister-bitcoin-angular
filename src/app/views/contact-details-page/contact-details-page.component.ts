@@ -16,7 +16,8 @@ export class ContactDetailsPageComponent implements OnInit {
   moves: Move[];
   subscription: Subscription
 
-  constructor(private route: ActivatedRoute, private contactService: ContactService, private userService: UserService) {
+  constructor(private route: ActivatedRoute, private contactService: ContactService, private userService: UserService) { }
+  ngOnInit(): void {
     this.contactService.getContactById(this.route.snapshot.params.id)
       .then(contact => this.contact = contact)
       .then(contact => {
@@ -25,8 +26,5 @@ export class ContactDetailsPageComponent implements OnInit {
             this.moves = [...moves]
           })
       })
-  }
-  // this.moves =
-  ngOnInit(): void {
   }
 }

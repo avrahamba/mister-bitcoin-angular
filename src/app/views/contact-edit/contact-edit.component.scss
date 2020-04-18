@@ -1,0 +1,29 @@
+$clr1: #393939;
+$clr2: #9fa6ad;
+$clr3: #2d2d2d;
+$clr4: #3e4a52;
+
+form{
+    padding: 20px 30px;
+    display: flex;
+    flex-direction: column;
+    *{
+        margin-bottom: 15px;   
+    }
+    img{
+        position: relative;
+        margin: 0 auto 15px;
+        max-width: 200px;
+    }
+    input,button{
+        height: 50px;
+        background-color: $clr4;   
+        color: $clr2;
+        border: none;
+        border-radius: 5px;
+        padding: 0 20px;
+    }
+    button{
+        cursor: pointer;
+    }
+}
