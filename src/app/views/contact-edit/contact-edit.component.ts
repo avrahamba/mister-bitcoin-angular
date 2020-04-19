@@ -11,43 +11,46 @@ import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms'
 export class ContactEditComponent implements OnInit {
 
   id: string;
-  contactForm: FormGroup;
+  contactForm: FormGroup = this.formBuilder.group({
+    name: ['', [Validators.required, nameValidator]],
+    email: ['', [Validators.required, validateEmail]],
+    phone: ['', [Validators.required]],
+  });
   imgUrl: string;
+  submited: boolean = false;
 
   constructor(private route: ActivatedRoute, private router: Router, private contactService: ContactService, private formBuilder: FormBuilder) { }
-  
-  ngOnInit(): void { 
-      if (this.route.snapshot.params['id?']) {
+
+  ngOnInit(): void {
+    if (this.route.snapshot.params['id?']) {
       const id = this.route.snapshot.params['id?'];
       this.imgUrl = 'https://robohash.org/' + id;
       this.contactService.getContactById(id)
         .then(contact => {
           this.id = contact._id
           this.contactForm = this.formBuilder.group({
-            email: [contact.email, [Validators.required, validateEmail]],
             name: [contact.name, [Validators.required, nameValidator]],
+            email: [contact.email, [Validators.required, validateEmail]],
             phone: [contact.phone, [Validators.required]],
           })
         })
     }
     else {
       this.imgUrl = 'assets/imgs/add-contact.svg';
-      this.contactForm = this.formBuilder.group({
-        email: ['', [Validators.required, validateEmail]],
-        name: ['', [Validators.required, nameValidator]],
-        phone: ['', [Validators.required]],
-
-      })
     }
-  
+
   }
 
   saveContact() {
-    if (this.contactForm.status !== 'VALID') return
+    if (this.contactForm.status !== 'VALID') {
+      console.log('test');
+      this.submited=true
+      return;
+    }
     const sendObj = { ...this.contactForm.value }
     if (this.id) sendObj._id = this.id;
     this.contactService.saveContact(sendObj)
-      .then(id => this.router.navigate(['/contact/' + id]))
+      .then(id => this.router.navigate(['/contact/' + id]));
   }
 }
 

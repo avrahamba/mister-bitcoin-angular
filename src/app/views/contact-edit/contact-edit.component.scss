@@ -26,4 +26,7 @@ form{
     button{
         cursor: pointer;
     }
+    .ng-touched.ng-invalid,.submited.ng-invalid{
+        border: 1px red solid;
+    }
 }

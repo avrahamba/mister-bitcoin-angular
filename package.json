@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "sudo ng build --prod --base-href https://avrahamba.github.io/mister-bitcoin-angular/mister-bitcoin/ && sudo ngh dir=dist/mister-bitcoin/",
+    "build": "sudo ng build --prod --base-href https://avrahamba.github.io/mister-bitcoin-angular/ && sudo ngh --dir=dist/mister-bitcoin/",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"

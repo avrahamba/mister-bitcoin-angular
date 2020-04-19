@@ -1,8 +1,8 @@
 <form [formGroup]="contactForm" (ngSubmit)="saveContact()" #addressForm="ngForm">
     <img [src]="imgUrl">
-    <input type="text" placeholder="Name" formControlName="name" required invalidName />
-    <input type="email" placeholder="Email" formControlName="email" required validateEmail />
-    <input type="tel" placeholder="Phone" formControlName="phone" required />
+    <input type="text" [ngClass]="{submited: submited}" placeholder="Name" formControlName="name" required invalidName />
+    <input type="email" [ngClass]="{submited: submited}" placeholder="Email" formControlName="email" required validateEmail />
+    <input type="tel" [ngClass]="{submited: submited}" placeholder="Phone" formControlName="phone" required />
     <button type="submit" >
         Save Contact
     </button>
